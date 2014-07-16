@@ -1,0 +1,87 @@
+Starting test
+Current path = /home/mathieu/Do/libKNM-test/KFS/generic
+Create a new folder : "testFolder"
+=====current folder : 
+.
+..
+main.c
+Makefile
+output_make
+output_test
+output_valid
+README
+test.args
+test.bin
+test.sh
+testFolder
+=====
+Current path = /home/mathieu/Do/libKNM-test/KFS/generic
+Go to the folder created ("testFolder")
+Current path = /home/mathieu/Do/libKNM-test/KFS/generic/testFolder
+Create new file : "testFile"
+=====current folder : 
+.
+..
+testFile
+=====
+Copy "testFile" to "testFileCopy"
+=====current folder : 
+.
+..
+testFile
+testFileCopy
+=====
+Move "testFileCopy" to "testFileMove"
+=====current folder : 
+.
+..
+testFile
+testFileMove
+=====
+Temove "testFileMove"
+=====current folder : 
+.
+..
+testFile
+=====
+Try create file : "testFile" to generate a error
+=====current folder : 
+.
+..
+testFile
+=====
+Is last instruction ok ? : false
+Error is : File exists
+Go to the parent folder
+Current path = /home/mathieu/Do/libKNM-test/KFS/generic
+=====current folder : 
+.
+..
+main.c
+Makefile
+output_make
+output_test
+output_valid
+README
+test.args
+test.bin
+test.sh
+testFolder
+=====
+Delete folder : "testFolder"
+=====current folder : 
+.
+..
+main.c
+Makefile
+output_make
+output_test
+output_valid
+README
+test.args
+test.bin
+test.sh
+testFolder
+=====
+Is last instruction ok ? : false
+Error is : Directory not empty

@@ -1,0 +1,14 @@
+Starting test
+set logfile : "testLog1.log"
+write log "default1" with the default (info) level
+write log "critical1" with the critical level
+write log "error1" with the error level
+write log "warning1" with the waring level
+write log "info1" with the info level
+set the default level to WARNING
+write log "default2" with the default (warning) level
+set min level to ERROR
+write log "info2" with the info level (should not be written)
+write log "warning2" with the waring level (should not be written)
+write log "critical2" with the critical level
+write log "error2" with the error level

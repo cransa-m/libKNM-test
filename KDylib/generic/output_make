@@ -1,0 +1,18 @@
+rm -f test.bin
+rm -f Dylib/Dylib.o
+rm -f testDyLib.so.1.0
+g++ Dylib/Dylib.cpp -fPIC -c
+mv Dylib.o Dylib
+g++ -shared -Wl,-soname,testDyLib.so.1  -o testDyLib.so.1.0 Dylib/Dylib.o
+g++ -I /usr/local/include/libKNM -W -Wall -ansi -pedantic -lpthread ./main.c -lKNM -Wl,-rpath /usr/local/lib -o test.bin
+./main.c: In function ‘int test(int, char**, char**)’:
+./main.c:58:43: warning: ISO C++ forbids casting between pointer-to-function and pointer-to-object [enabled by default]
+./main.c:61:41: warning: ISO C++ forbids casting between pointer-to-function and pointer-to-object [enabled by default]
+./main.c:64:41: warning: ISO C++ forbids casting between pointer-to-function and pointer-to-object [enabled by default]
+./main.c:67:43: warning: ISO C++ forbids casting between pointer-to-function and pointer-to-object [enabled by default]
+./main.c:70:45: warning: ISO C++ forbids casting between pointer-to-function and pointer-to-object [enabled by default]
+./main.c:74:41: warning: ISO C++ forbids casting between pointer-to-function and pointer-to-object [enabled by default]
+
+
+~~~test.sh log~~~
+make time: 1 seconds

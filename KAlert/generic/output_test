@@ -1,0 +1,20 @@
+Starting test
+list limit : -1
+Get Last alert (expected "data14") : data14
+get first priority alert (expected "data11") : data11
+set limit to 5
+get first priority alert (expected "data8") : data8
+get first priority alert (expected "data6") : data6
+get first priority alert (expected "data9") : data9
+Get Last alert (expected "data13") : data13
+Get Last alert (expected "data12") : data12
+Get Last alert (expected "data10") : data10
+Get Last alert (expected "data7") : data7
+insert 3 new alerts
+get first priority alert (expected "data16") : data16
+get first priority alert (expected "data5") : data5
+Get Last alert (expected "data17") : data17
+Get Last alert (expected "data15") : data15
+Get Last alert (expected "data4") : data4
+Get Last alert (expected empty) : 
+get first priority alert (expected empty) : 

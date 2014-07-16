@@ -1,0 +1,53 @@
+OCADrone AI tests are all similar in their use and structure.
+To make testing process simple and more efficient, the following rules are used:
+
+1 - Test ONE class, function, functionnality... per test directory
+2 - Test script should be the same everywhere
+3 - Test configuration is done through local configuration files
+4 - Only modify what you're allowed to edit. Nothing else.
+
+
+FAQ
+---
+
+[Q] How do I use the test script ?
+[A] Run 'test.sh' script, and look at the result.
+
+
+[Q] How do I interpret the results ?
+[A] Four results are printed. Each result can have one of the following value:
+    - SUCCESS : everything went as expected
+    - FAIL    : something went wrong
+    - ?       : unable to interpret the result, or unknow result
+    You can get some infos if you call the script with the -c option.
+
+
+[Q] How to get more informations about testing process ?
+[A] You can run the script with the -v option. Also try the -h option, to
+    print some useful help about script usage.
+
+
+[Q] I want to customize test arguments.
+[A] Write arguments in a file named 'test.args', following this syntax:
+    - ONE argument per line
+    - The following symbols ",':./; are literals
+    - An argument with whitespace MUST NOT be placed arround '' or ""
+    - The file MUST end with an EMPTY new line
+
+
+[Q] Where is the compilation log ?
+[A] In the file named 'output_make', generated after each test script call.
+
+
+[Q] I want code in C++, but 'main.c' is a '.c' file.
+[A] main.c can be compiled by g++ or gcc. Just write your code in the test()
+    function, and optionnaly configure the compilator in the makefile.
+
+
+[Q] lol ftw still get fail at test output fuck ya
+[A] Write the output you're waiting for in 'outut_valid'. You can also
+    call the script with --generate option to build the output from the
+    return of your code.
+    Don't forget that AN EMPTY OUTPUT IS AN ERROR; At least, 'output_valid'
+    should contains the sentence "Starting test" (without the ") followed
+    by a new line. Look at 'main.c', 'main()' function.

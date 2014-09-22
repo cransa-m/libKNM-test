@@ -1,0 +1,76 @@
+Starting test
+========== good file ==========
+0
+25
+value1
+scope3scope4value1
+node = .var1 // leaf = value1
+node = .var2 // leaf = value2
+node = .var3 // leaf = value3
+node = .var4 // leaf = value4
+node = .var5 // leaf = value5
+node = .var6 // leaf = value6
+node = .var7 // leaf = 42
+node ".mylist1" has no value -- error message : registry::node::find(): leaf not found
+node = .mylist1.0 // leaf = a
+node = .mylist1.1 // leaf = b
+node = .mylist1.2 // leaf = cdefg
+node = .mylist1.3 // leaf = hello
+node ".myList2" has no value -- error message : registry::node::find(): leaf not found
+node = .myList2.0 // leaf = 1
+node = .myList2.1 // leaf = 2
+node = .myList2.2 // leaf = 3
+node = .myList2.3 // leaf = 4
+node = .scope1{.var1 // leaf = scope1value1
+node = .scope2.var1 // leaf = scope2value1
+node = .scope2.var2 // leaf = 42
+node = .scope3.scope4.var1 // leaf = scope3scope4value1
+node = .scope5.var1 // leaf = 42
+node = .scope5.scope6.var1 // leaf = scope5scope6value1
+node = .scope5.scope7.var1 // leaf = 61
+node = .scope5.scope8.var1 // leaf = 84
+========== empty file ==========
+0
+0
+========== fail declarations ==========
+0
+5
+node = .var2 // leaf = 
+node = .var3 // leaf = 
+node = .var4value4.var5.var10 // leaf = value10
+node = .var4value4.var5.var11 // leaf = value11
+node = .var4value4.var5.var14 // leaf = 14
+========== fail includes ==========
+0
+1
+node "." has no value -- error message : registry::node::find(): leaf not found
+========== fail lists ==========
+0
+18
+node ".mylist1" has no value -- error message : registry::node::find(): leaf not found
+node = .mylist1.0 // leaf = a
+node = .mylist1.1 // leaf = b
+node = .mylist1.2 // leaf = cdefg
+node = .mylist1.3 // leaf = hello
+node ".myList2" has no value -- error message : registry::node::find(): leaf not found
+node = .myList2.0 // leaf = 1
+node = .myList2.1 // leaf = 2
+node = .myList2.2 // leaf = 3
+node = .myList2.3 // leaf = 4
+node = .myList3 // leaf = {{
+node = .myList4 // leaf = {1,{
+node ".2,3}.,4}.myList5" has no value -- error message : registry::node::find(): leaf not found
+node = .2,3}.,4}.myList5.0 // leaf = 
+node ".2,3}.,4}.myList6" has no value -- error message : registry::node::find(): leaf not found
+node = .2,3}.,4}.myList6.0 // leaf = 1
+node = .2,3}.,4}.myList6.1 // leaf = 2
+node = .2,3}.myList7 // leaf = {{
+========== fail scopes ==========
+0
+6
+node = .scope1{.var1 // leaf = value1
+node = .scope2{.var1 // leaf = value1}
+node = .scope2{.scope3{.var1 // leaf = value1
+node = .scope2{.scope4{.scope4 // leaf = scope4
+node = .scope2{.scope5.var1 // leaf = value1
+node = .scope2{.scope6{.scope7{.var1 // leaf = value1

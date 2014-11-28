@@ -1,0 +1,5 @@
+Test KConfig execution in 3 modes:
+
+- KConfig with no parameters and request
+- KConfig with a file during constructions and requests (valid and invalid)
+- KConfig with a file specified later and requests (valid and invalid)

@@ -1,0 +1,14 @@
+Starting test
+set path
+Is lybrary opended? : false
+Open Lybrary 
+is Error ? : 
+Is lybrary opended? : true
+add one to i with the library
+foo = 0
+foo = 1
+foo = 11
+foo = 10
+10
+foo = 20
+20

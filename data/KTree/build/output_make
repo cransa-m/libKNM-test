@@ -1,0 +1,6 @@
+rm -f test.bin
+g++ -I /usr/local/include/KNM -W -Wall -ansi -pedantic -lpthread -lKNM main.c  -o test.bin
+
+
+~~~test.sh log~~~
+make time: 0 seconds

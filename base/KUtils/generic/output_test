@@ -1,0 +1,105 @@
+Starting test
+=== unquoted method ===
+"Once uppon a time"| unquoted -> Once uppon a time
+=== quoted method ===
+Hello World !| quoted -> "Hello World !"
+=== ToInt method ===
+"Once uppon a time"| ToInt -> 0
+Hello World !| ToInt -> 0
+42.56| ToInt -> 42
+42| ToInt -> 42
+true| ToInt -> 0
+false| ToInt -> 0
+=== ToFloat method ===
+"Once uppon a time"| ToFloat -> 0
+Hello World !| ToFloat -> 0
+42.56| ToFloat -> 42.56
+42| ToFloat -> 42
+true| ToFloat -> 0
+false| ToFloat -> 0
+=== ToBool method ===
+"Once uppon a time"| ToBool -> 0
+Hello World !| ToBool -> 0
+42.56| ToBool -> 0
+42| ToBool -> 0
+true| ToBool -> 1
+false| ToBool -> 0
+=== ToString (KNM::types) method ===
+void
+byte
+boolean
+integer
+float
+string
+list
+=== ToString (int) method ===
+0| ToString -> 0
+-42| ToString -> -42
+42| ToString -> 42
+424242424| ToString -> 424242424
+=== ToString (float) method ===
+0| ToString -> 0
+-42.42| ToString -> -42.42
+13.37| ToString -> 13.37
+4.24242e+17| ToString -> 4.24242e+17
+0.424242| ToString -> 0.424242
+4.2e-11| ToString -> 4.2e-11
+=== ToString (bool) method ===
+true| ToString -> true
+false| ToString -> false
+=== type_Name method ===
+"Once uppon a time"| TypeName -> string
+Hello World !| TypeName -> string
+42.56| TypeName -> float
+42| TypeName -> integer
+true| TypeName -> boolean
+false| TypeName -> boolean
+=== EndlikeUnix method ===
+"Once uppon a time"| EndlikeUnix (no endl) -> "Once uppon a time"
+Hello World !| EndlikeUnix (no endl) -> Hello World !
+42.56| EndlikeUnix (no endl) -> 42.56
+42| EndlikeUnix (no endl) -> 42
+true| EndlikeUnix (no endl) -> true
+false| EndlikeUnix (no endl) -> false
+=== EndlikeUnix method ===
+"Once uppon a time"| EndlikeDos (no endl) -> "Once uppon a time"
+Hello World !| EndlikeDos (no endl) -> Hello World !
+42.56| EndlikeDos (no endl) -> 42.56
+42| EndlikeDos (no endl) -> 42
+true| EndlikeDos (no endl) -> true
+false| EndlikeDos (no endl) -> false
+=== EndlikeNone method ===
+"Once uppon a time"| EndlikeNone -> "Once uppon a time"
+Hello World !| EndlikeNone -> Hello World !
+42.56| EndlikeNone -> 42.56
+42| EndlikeNone -> 42
+true| EndlikeNone -> true
+false| EndlikeNone -> false
+=== replace method ===
+Hello World !| replace " " with ";"  -> Hello;World;!
+Hello World !| replace "y" with ";"  -> Hello World !
+Hello World !| replace "lo Worl" with ""  -> Held !
+Hello World !| replace "Hello" with "Welcome"  -> Welcome World !
+Hello World !| replace "World !" with "Everybody !"  -> Hello Everybody !
+Hello World !| replace "Hello World !" with "Welcome Everybody !"  -> Welcome Everybody !
+===clearReturn method===
+line with 10 \n | clearReturn -> 1 2 3 4 5 6 7 8 9 10
+1\n 2\n 3\n| (with two \) | clearReturn -> 1\n 2\n 3\n
+=== getFileExtension method ===
+Hello World !| get_file_ext -> 
+filetext.txt| get_file_ext -> .txt
+exec.bin| get_file_ext -> .bin
+=== dirname method ===
+exec.bin| dirname -> .
+/bin/ls| dirname -> /bin
+/usr/local/include/KNM/| dirname -> /usr/local/include
+=== basename method ===
+exec.bin| basename -> include
+/bin/ls| basename -> ls
+/usr/local/include/KNM/| basename -> KNM
+=== findFirst method ===
+exec.bin| findFirst '.' -> 4
+exec.bin| findFirst '\0' -> -1
+exec.bin| findFirst 'o' -> -1
+/bin/ls| findFirst 's' -> 6
+/usr/local/include/KNM/| findFirst '/' -> 0

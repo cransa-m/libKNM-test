@@ -1,0 +1,11 @@
+rm -f test.bin
+rm -f Dylib/Dylib.o
+rm -f testDyLib.so.1.0
+g++ Dylib/Dylib.cpp -fPIC -c
+mv Dylib.o Dylib
+g++ -shared -Wl,-soname,testDyLib.so.1  -o testDyLib.so.1.0 Dylib/Dylib.o
+g++ -I /usr/local/include/KNM -Wl,--no-as-needed -std=c++11 -lpthread -ldl ./main.c -lKNM -Wl,-rpath /usr/local/lib -o test.bin
+
+
+~~~test.sh log~~~
+make time: 1 seconds

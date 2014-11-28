@@ -1,0 +1,78 @@
+/* Functions prototypes */
+int 	test(int, char**, char**);
+
+/* Default includes (C++ version) */
+#ifdef __cplusplus
+#include <iostream>
+#include <string>
+#endif
+
+/* Default includes (C version) */
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+/* Put your own includes here */
+#include <base/KUtils.hh>
+
+/* Namespace configuration if C++ */
+#ifdef __cplusplus
+using namespace std;
+#endif
+
+
+/* Customize options here.
+ * Note: RETURN_* have to be set according to test.sh script.
+ * By default, 0=success, 1=fail.
+ */
+#define ARGS_MIN		1
+#define RETURN_SUCCESS	0
+#define RETURN_FAIL		1
+
+ using namespace KNM;
+
+ int 		test(	int __attribute__((__unused__))ac, 
+ 	char __attribute__((__unused__))**av,
+ 	char __attribute__((__unused__))**env)
+ {
+	/* Put your code from here... */
+  string s1("\"Once uppon a time\"");
+  string s2("Hello World !");
+  string s3("42.56");
+  string s4("42");
+  bool b1 = true;
+  bool b2 = false;
+
+   cout << "=== unquoted method ===" << endl;
+  cout << s1 << " unquoted -> " << *KUtils::unquote(s1) << endl;
+
+   cout << "=== quoted method ===" << endl;
+  cout << s2 << " quoted -> " << *KUtils::quote(s2) << endl;
+
+  cout << "=== toInt method ===" << endl;
+  cout << s1 << " ToInt -> " << KUtils::to_int(s1) << endl;
+  cout << s2 << " ToInt -> " << KUtils::to_int(s2) << endl;
+  cout << s3 << " ToInt -> " << KUtils::to_int(s3) << endl;
+  cout << s4 << " ToInt -> " << KUtils::to_int(s4) << endl;
+
+  cout << "=== toFloat method ===" << endl;
+  cout << s1 << " ToFloat -> " << KUtils::to_float(s1) << endl;
+  cout << s2 << " ToFloat -> " << KUtils::to_float(s2) << endl;
+  cout << s3 << " ToFloat -> " << KUtils::to_float(s3) << endl;
+  cout << s4 << " ToFloat -> " << KUtils::to_float(s4) << endl;
+
+
+    /* ... and stop writing here. */
+  return(RETURN_SUCCESS);
+}
+
+int 		main(int ac, char **av, char **env)
+{
+	if (ac < ARGS_MIN)
+	{
+		printf("args error: %d passed, %d expected\n", ac, ARGS_MIN);
+		return(RETURN_FAIL);
+	}
+	printf("Starting test\n");
+	return(test(ac, av, env));
+}

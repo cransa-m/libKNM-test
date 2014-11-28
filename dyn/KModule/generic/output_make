@@ -1,0 +1,23 @@
+rm -f test.bin
+rm -f Module/ModuleTest.o
+rm -f testModule.so.1.0
+g++ Module/ModuleTest.cpp -fPIC -c
+mv ModuleTest.o Module
+g++ -shared -Wl,-soname,testModule.so.1  -o testModule.so.1.0 Module/ModuleTest.o -ldl
+g++ -I /usr/local/include/KNM -W -Wall -g -ansi -Wl,--no-as-needed  ./main.c -lKNM -Wl,-rpath /usr/local/lib -o test.bin -lpthread -ldl
+./main.c: In function ‘int test(int, char**, char**)’:
+./main.c:45:5: error: ‘class KNM::KModule<TestModule>’ has no member named ‘setModule’
+   k.setModule(pathLib);
+     ^
+./main.c:46:5: error: ‘class KNM::KModule<TestModule>’ has no member named ‘setBuilder’
+   k.setBuilder("get" + mod);
+     ^
+./main.c:47:5: error: ‘class KNM::KModule<TestModule>’ has no member named ‘setDestroyer’
+   k.setDestroyer("del" + mod);
+     ^
+Makefile:35: recipe for target 'test.bin' failed
+make: *** [test.bin] Error 1
+
+
+~~~test.sh log~~~
+make time: 1 seconds

@@ -1,0 +1,40 @@
+Starting test
+Number of leaves at the racine : 4
+Number of nodes at the racine : 3
+Number of leaves at "n1" : 4
+Number of nodes at "n1" : 1
+Number of leaves at "n2" : 4
+Number of nodes at "n2" : 0
+is n1 a node?true
+is n1 a leaf?false
+is l5 a node?false
+is l5 a leaf?false
+is .n1.l1 a node?true
+is .n1.l1 a leaf?true
+find l5 : value9
+KTree::find(): leaf not found
+nodes at the racines : 
+- n1
+- n2
+- n4
+leaves at the racines : 
+- l5
+- l6
+- l7
+- l8
+Number of leaves at "n1" : 4
+Number of nodes at "n1" : 1
+nodes at ".n1" : 
+- n3
+leaves at ".n1" : 
+- l1
+- l2
+- l3
+- l4
+===== leaf1 infos =====
+name = l1
+data = value1
+name = leafRenamed
+data = leafReassigned
+name = leafRenamed
+data = leafReassignedwithequal

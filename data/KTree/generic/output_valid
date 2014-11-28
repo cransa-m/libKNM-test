@@ -1,0 +1,11 @@
+Starting test
+Number of leaves at the racine : 0
+Number of nodes at the racine : 0
+Number of leaves at "n1" : 0
+Number of nodes at "n1" : 0
+Number of leaves at "n2" : 0
+Number of nodes at "n2" : 0
+is n1 a node?false
+is n1 a leaf?false
+is l5 a node?true
+is l5 a leaf?true
